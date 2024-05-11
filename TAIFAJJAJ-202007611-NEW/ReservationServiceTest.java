@@ -32,7 +32,20 @@ Reservation modifiedReservation = reservationService1.getReservation(reservation
 assertNotNull(modifiedReservation);
 assertEquals(newFlightDetails, modifiedReservation.getFlightDetails()); }
 
+// method for cancelReservation test  :
+    @Test
+public void cancelReservation() {
+ // Arrange
+ReservationService reservationService2 = new ReservationService();
+String reservationId = "123";
+String flightDetails = "Flight XYZ";
+reservationService2.createReservation(reservationId, flightDetails);
+boolean isCancelled = reservationService2.cancelReservation(reservationId);
+assertTrue(isCancelled);
+assertNull(reservationService2.getReservation(reservationId));
 
+
+    }
 
  }
 
