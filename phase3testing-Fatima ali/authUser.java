@@ -1,3 +1,8 @@
+1. Follow Java naming conventions: Rename the class from AuthUser to UserAuthenticator to better reflect its purpose.
+2. Use the this keyword in the constructor to clarify the assignment of values to instance variables.
+3. Add a commit message.
+
+
 //Fatima ali ahmed 202004905 
 package phase3testing;
 public class authUser {
