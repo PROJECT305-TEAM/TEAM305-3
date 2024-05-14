@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+
+//code is ready for edits.
 //This is the DATA LAYER:
+
+
 
 class User {
     private String username;
