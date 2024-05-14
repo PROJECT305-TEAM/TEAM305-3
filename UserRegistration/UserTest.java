@@ -1,4 +1,4 @@
-package com.company;
+package UserRegistration;
 
 import org.junit.jupiter.api.Test;
 
