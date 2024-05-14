@@ -62,6 +62,12 @@ for (Reservation reservation : reservations) {
 return reservation; } }
 return null; // Reservation not found
 }
+        // Print all reservations (new method to add)
+    public void printAllReservations() {
+        for (Reservation reservation : reservations) {
+            System.out.println("Reservation ID: " + reservation.getReservationId() + ", Flight Details: " + reservation.getFlightDetails());
+        }
+    
 }
 
 
