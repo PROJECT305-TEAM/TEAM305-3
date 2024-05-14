@@ -1,15 +1,11 @@
 package UserRegistration;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-
-
-//code is ready for edits.
 //This is the DATA LAYER:
-
-
 
 class User {
     private String username;
@@ -29,9 +25,7 @@ class User {
     }
 }
 
-
 //This is the BUSINESS LAYER:
-
 
 
 class UserRegistrationService {
@@ -66,9 +60,7 @@ class UserRegistrationService {
     }
 }
 
-
 //This is the PRESENTATION LAYER:
-
 
 
 public class UserRegistration{
@@ -78,12 +70,8 @@ public class UserRegistration{
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("1. Sign up");
-            System.out.println("2. Log in");
-            System.out.println("3. Exit");
-            System.out.print("Choose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            displayMenu();
+            int choice = getIntegerInput(scanner);
 
             switch (choice) {
                 case 1:
@@ -94,9 +82,28 @@ public class UserRegistration{
                     break;
                 case 3:
                     System.out.println("Exiting...");
+                    scanner.close(); // Close scanner before exiting
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+//tweaked display menu
+    private static void displayMenu() {
+        System.out.println("1. Sign up");
+        System.out.println("2. Log in");
+        System.out.println("3. Exit");
+        System.out.print("Choose an option: ");
+    }
+// for validation and error handing.
+    private static int getIntegerInput(Scanner scanner) {
+        while (true) {
+            try {
+                return scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                scanner.next(); // Consume invalid input
             }
         }
     }
@@ -131,4 +138,5 @@ public class UserRegistration{
         }
     }
 }
+
 
