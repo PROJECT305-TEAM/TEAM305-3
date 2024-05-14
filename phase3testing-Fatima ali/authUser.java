@@ -46,5 +46,13 @@ public class authUser {
     public void setPassword(String password) {
         this.password = password;
     }
+
+public void changePassword(String newPassword) {
+    this.password = newPassword;
+    System.out.println("Password changed successfully.");
+}
+
+
+    
 }
 
