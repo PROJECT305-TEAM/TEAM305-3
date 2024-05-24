@@ -20,4 +20,5 @@ public class authUserTest {
         // Arrange
         authUser authUser = new authUser("invalid", "credentials");
         boolean result = authUser.authenticate();
-        Assert.assertFalse(result);
+        Assert.assertFalse(result);}
+}
